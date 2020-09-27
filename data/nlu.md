@@ -7,12 +7,17 @@
 - hey there
 - hey buddy
 
-## intent:add_data~~~~
+## intent:add_data
 - i want to add some data to the excel sheet
 - i want to add the user data to the excel sheet
 - add user data
 - ask some questions to add the user data
 - what information is required to add the data to the excel sheet
+
+## intent:ask_info
+- list out the [email]{"entity":"column", "value":"email"} of the user who's occupation is [trainor]{"entity":"occup", "value":"trainor"}
+- list out the [name]{"entity":"column", "value":"name"} of the user who's occupation is [doctor]{"entity":"occup", "value":"doctor"}
+- tell me the [mobile number]{"entity":"column", "value":"number"} of the user whose occupation is [programmer]{"entity":"occup", "value":"programmer"}
 
 ## intent:goodbye
 - bye

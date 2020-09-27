@@ -23,3 +23,7 @@
 
 * affirm
   - action_save_data
+  
+## fetch info
+* ask_info{"column": "email", "occup": "trainor"}
+  - action_fetch_data

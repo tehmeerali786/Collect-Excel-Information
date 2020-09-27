@@ -14,7 +14,7 @@ from rasa_sdk.events import EventType
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 
-from excel_data_store_read import DataStore
+from excel_data_store_read import DataStore, FetchData
 
 
 class ActionSaveData(Action):
@@ -30,6 +30,19 @@ class ActionSaveData(Action):
             tracker.get_slot("email"),
             tracker.get_slot("occupation"))
         dispatcher.utter_message(text="Data Stored Successfully!")
+
+        return []
+
+class ActionFetchData(Action):
+
+    def name(self) -> Text:
+        return "action_fetch_data"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        output = FetchData(tracker.latest_message['entities'][0]['value'], tracker.latest_message['entities'][1]['value'])
+        dispatcher.utter_message(text="This is the data that you have asked for, \n{}".format(",".join(output)))
 
         return []
 
