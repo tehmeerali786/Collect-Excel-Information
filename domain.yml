@@ -3,16 +3,49 @@ intents:
   - goodbye
   - affirm
   - deny
+  - add_data
+
+entities:
+  - number
+  - email
+
+slots:
+  name:
+    type: unfeaturized
+  number:
+    type: unfeaturized
+  email:
+    type: unfeaturized
+  occupation:
+    type: unfeaturized
 
 
 responses:
   utter_greet:
   - text: "Hey! How are you?"
-
-
-
   utter_goodbye:
   - text: "Bye"
+  utter_ask_name:
+    - text: "May I know your name please?"
+  utter_ask_number:
+    - text: "May I know your mobile number please?"
+  utter_ask_email:
+    - text: "May I know your email please?"
+  utter_ask_occupation:
+    - text: "May I know your occupation please?"
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_name
+  - utter_ask_number
+  - utter_ask_email
+  - utter_ask_occupation
+
+forms:
+  - Form_Info
+
+
 
 
 
