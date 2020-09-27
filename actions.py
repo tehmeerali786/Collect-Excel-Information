@@ -14,16 +14,21 @@ from rasa_sdk.events import EventType
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 
+from excel_data_store_read import DataStore
 
-class ActionHelloWorld(Action):
+
+class ActionSaveData(Action):
 
     def name(self) -> Text:
-        return "action_hello_world"
+        return "action_save_data"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        DataStore(tracker.get_slot("name"),
+            tracker.get_slot("number"),
+            tracker.get_slot("email"),
+            tracker.get_slot("occupation"))
         dispatcher.utter_message(text="Hello World!")
 
         return []

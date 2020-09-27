@@ -7,4 +7,7 @@ def DataStore(name, mobile_number, email, occupation):
         df.append([name, mobile_number, email, occupation])
         df.to_excel("user_data.xlsx", index=False)
     else:
+        df=pd.DataFrame([name, mobile_number, email, occupation],
+                        columns=["name", "mobile_number", "email", "occupation"])
+        df.to_excel("user_data.xlsx", index=False)
 
