@@ -22,4 +22,4 @@
   - form{"name": null}
 
 * affirm
-  - utter_goodbye
+  - action_save_data

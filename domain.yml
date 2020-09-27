@@ -41,6 +41,7 @@ actions:
   - utter_ask_number
   - utter_ask_email
   - utter_ask_occupation
+  - action_save_data
 
 forms:
   - Form_Info

@@ -29,7 +29,7 @@ class ActionSaveData(Action):
             tracker.get_slot("number"),
             tracker.get_slot("email"),
             tracker.get_slot("occupation"))
-        dispatcher.utter_message(text="Hello World!")
+        dispatcher.utter_message(text="Data Stored Successfully!")
 
         return []
 
